@@ -2,8 +2,11 @@
 * {
   font-family: "Open Sans", sans-serif;
 }
+html,
 body {
   margin: 0px;
+  scroll-behavior: smooth;
+  overflow-x: scroll;
 }
 
 .logo {
@@ -17,6 +20,7 @@ body {
 }
 .text1h {
   position: absolute;
+  border-bottom-left-radius: 20px;
   margin-top: -33.5vw;
   margin-left: clamp(200px, 80.9vw, 2500px);
   color: white;
@@ -24,7 +28,7 @@ body {
   padding: 2.09vw;
   text-align: center;
   background-color: #f48022d5;
-  animation: ttslide 1s ease-in-out 0s 1;
+  animation: ttslide 1s ease-in-out 0s;
 }
 
 @keyframes ttslide {
@@ -46,10 +50,15 @@ body {
   color: #f48022;
   padding: 0;
   margin: 0;
+  z-index: 10;
 }
 .section2 h2 {
+  padding-top: 1.5vw;
   font-size: 2vw;
   height: 4.3vw;
+}
+.section5 a {
+  color: white;
 }
 .section2 p {
   font-size: 1.3vw;
@@ -73,7 +82,7 @@ body {
   flex-direction: column;
   padding-left: 1.4vw;
   animation: init 1s ease-in-out 1.2s;
-  animation-iteration-count: 3;
+  animation-iteration-count: 1;
   animation-fill-mode: none;
 }
 
@@ -116,9 +125,9 @@ body {
   flex-direction: column;
   padding-left: 1.4vw;
   animation: init 1s ease-in-out 1s;
-  animation-iteration-count: 3;
+  animation-iteration-count: 1;
   animation-fill-mode: none;
-  animation-delay: 4.5s;
+  animation-delay: 2.5s;
 }
 .sec2row3 {
   flex: 1;
@@ -127,9 +136,9 @@ body {
   padding-left: 1.4vw;
   margin-right: 1.4vw;
   animation: init 1s ease-in-out 1s;
-  animation-iteration-count: 3;
+  animation-iteration-count: 1;
   animation-fill-mode: none;
-  animation-delay: 7.7s;
+  animation-delay: 3.7s;
 }
 .sec2row4 {
   flex: 2;
@@ -139,13 +148,40 @@ body {
 video {
   width: 39.9vw;
 }
+.sec2row3:hover {
+  background-color: #f48022;
+  color: white;
+  transform: scaleX(1.03) scaleY(1.03);
+  /* From https://css.glass */
+  background: rgba(240, 118, 36, 0.74);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-right: 1vw;
+  transition-property: transform;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+}
 @media only screen and (max-width: 1200px) {
+  .text1h {
+    position: absolute;
+    margin-top: -33.5vw;
+    margin-left: clamp(200px, 80.9vw, 2500px);
+    color: white;
+    font-size: clamp(10px, 2.3vw, 30px);
+    padding: 2.09vw;
+    text-align: center;
+    background-color: #f48022d5;
+    animation: ttslide 1s ease-in-out 0s 1;
+  }
   video {
-    padding-top: 1.5vw;
+    margin-top: 2.5vw;
     width: 100vw;
   }
   .section2 h2 {
-    font-size: 4vw;
+    font-size: 3.8vw;
     height: 7.3vw;
   }
   .section2 p {
@@ -169,16 +205,42 @@ video {
     flex-direction: column;
     margin-left: 1.5vw;
     animation: init 1s ease-in-out 1.2s;
-    animation-iteration-count: 3;
+    animation-iteration-count: 1;
     animation-fill-mode: none;
+  }
+  .sec2row3 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-left: 1.4vw;
+    margin-right: 0.1vw;
+    animation: init 1s ease-in-out 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: none;
+    animation-delay: 3.7s;
+  }
+  .sec2row3:hover {
+    color: white;
+    transform: scaleX(1.03) scaleY(1.03);
+    /* From https://css.glass */
+    background: rgba(240, 118, 36, 0.74);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin-right: 1.5vw;
+    transition-property: transform;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
   }
 }
 
 .sec2row1:hover {
   background-color: #f48022;
   color: white;
-  margin-left: 1.5vw;
-  transform: scaleX(1.1) scaleY(1.1);
+  margin-left: 0.5vw;
+  transform: scaleX(1.03) scaleY(1.03);
 
   /* From https://css.glass */
   background: rgba(240, 118, 36, 0.74);
@@ -195,7 +257,7 @@ video {
 .sec2row2:hover {
   background-color: #f48022;
   color: white;
-  transform: scaleX(1.1) scaleY(1.1);
+  transform: scaleX(1.03) scaleY(1.03);
   /* From https://css.glass */
   background: rgba(240, 118, 36, 0.74);
   border-radius: 16px;
@@ -208,46 +270,375 @@ video {
   transition-timing-function: linear;
 }
 
-.sec2row3:hover {
-  background-color: #f48022;
-  color: white;
-  transform: scaleX(1.1) scaleY(1.1);
-  /* From https://css.glass */
-  background: rgba(240, 118, 36, 0.74);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  transition-property: transform;
-  transition-duration: 0.2s;
-  transition-timing-function: linear;
-}
-
 .section3 {
+  margin-top: 10px;
   display: flex;
-  width: 100%;
+  z-index: 0;
+}
+.section4 {
+  margin-top: -5px;
+  display: flex;
+  z-index: 0;
 }
 
 .sec3col1 {
   flex: 2;
-  background-color: red;
+  position: relative;
+  display: flex;
 }
 
+.sec3col1:hover h1 {
+  cursor: pointer;
+  display: block;
+}
+.sec3col2:hover h1 {
+  cursor: pointer;
+  display: block;
+}
+.sec3col3:hover h1 {
+  cursor: pointer;
+  display: block;
+}
 .sec3col2 {
   flex: 2;
-  background-color: blue;
+  background-color: rgb(153, 0, 255);
+  position: relative;
+  display: flex;
 }
 
 .sec3col3 {
   flex: 1;
   background-color: orchid;
+  position: relative;
+  display: flex;
 }
 
-.sec3col1:hover {
-  background-color: rgba(255, 166, 0, 0.514);
+.sec3col1 h1 {
+  background-color: rgba(161, 157, 157, 0.336);
+  width: 100%;
+  height: 90%;
+  background-color: rgba(240, 118, 36, 0.74);
+  color: white;
+  position: absolute;
+  display: none;
+  font-size: 3.5vw;
+  padding-left: 20px;
 }
 
-.section3 img {
-  z-index: -1;
+.sec3col2 h1 {
+  background-color: rgba(161, 157, 157, 0.336);
+  width: 100%;
+  height: 90%;
+  background-color: rgba(240, 118, 36, 0.74);
+  color: white;
+  position: absolute;
+  display: none;
+  font-size: 3.5vw;
+  padding-left: 20px;
+}
+
+.sec3col3 h1 {
+  background-color: rgba(161, 157, 157, 0.336);
+  width: 90%;
+  height: 90%;
+  background-color: rgba(240, 118, 36, 0.74);
+  color: white;
+  position: absolute;
+  display: none;
+  font-size: 3.5vw;
+  padding-left: 20px;
+}
+
+.section5 {
+  display: flex;
+  position: relative;
+  margin-top: -5px;
+  background-color: rgb(240, 118, 36);
+}
+
+.section5 h1 {
+  flex: 1;
+  color: white;
+  text-align: right;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding-left: 100px;
+  font-size: 2.5vw;
+}
+
+.section5 p {
+  flex: 2;
+  color: white;
+  text-align: left;
+  font-size: 1.9vw;
+  padding: 50px;
+}
+
+.section6 {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.section6 h1 {
+  text-align: center;
+}
+
+.bogimg {
+  display: flex;
+  flex-direction: row;
+  padding: 2.5vw;
+}
+.bogimgrd {
+  width: 100%;
+  text-align: center;
+  padding: 2.5vw;
+  color: black;
+}
+.bogimg img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  background-position: top center;
+  border-radius: 50%;
+  border-color: rgb(240, 118, 36);
+  border-width: 5px;
+  border-style: solid;
+  -moz-box-shadow: 3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow: 3px 3px 5px 6px #ccc;
+}
+
+.bogimg h4 {
+  font-size: 1vw;
+}
+
+.bogimg h3 {
+  font-size: 1.8vw;
+  padding-top: 2.5vw;
+}
+
+.mySlides {
+  display: none;
+  width: 100%;
+  margin: auto;
+  flex-direction: row;
+}
+
+.imgscr {
+  flex: 1;
+
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  padding: 100px;
+  padding-left: 10.5vw;
+}
+
+.imgscr img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  background-position: top center;
+  border-radius: 50%;
+  border-color: rgb(255, 255, 255);
+  border-width: 5px;
+  border-style: solid;
+}
+
+.h1scr {
+  flex: 2;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  width: 100%;
+  position: relative;
+  margin: auto;
+  background-color: rgb(240, 118, 36);
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.596);
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: rgb(240, 118, 36);
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .prev,
+  .next,
+  .text {
+    font-size: 11px;
+    color: white;
+  }
+}
+.h1scr {
+  color: white;
+  text-align: justify;
+  padding-left: 10.5vw;
+  padding-right: 10.5vw;
+  padding-top: 11.5vw;
+}
+.h1scr a {
+  color: white;
+  text-decoration: underline;
+}
+
+.h1scr a:hover {
+  color: black;
+}
+.section8 {
+  display: flex;
+  width: 100%;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.section9 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 100px;
+  background-color: #a40606;
+  background-image: linear-gradient(315deg, #a40606 0%, #d96624 74%);
+}
+
+.sec9cont {
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  background-color: rgb(46, 46, 46);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 4px solid rgba(255, 255, 255, 0.3);
+}
+
+.sec9cont h2 {
+  color: white;
+  padding: 50px;
+}
+
+.sec9cont input {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: white;
+  width: 80%;
+  padding: 10px;
+  background-color: rgba(255, 0, 0, 0);
+  border-bottom: white;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom-style: solid;
+  font-size: 20px;
+  outline: none;
+}
+
+.sec9cont button {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: rgb(0, 0, 0);
+  width: 40%;
+  padding: 20px;
+  border-radius: 30px;
+  border: none;
+  font-size: 20px;
+  outline: none;
+}
+
+.sec9cont button:hover {
+  background-color: gray;
+  color: white;
+}
+
+.socailicon {
+  margin-bottom: 300px;
+  width: 100%;
+  display: flex;
+  padding: 50px;
+  flex-direction: row;
+  color: white;
+  align-items: center;
+  justify-items: space-around;
+  align-content: space-between;
 }
